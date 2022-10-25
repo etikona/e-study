@@ -1,5 +1,6 @@
 import { Children } from "react";
 import { createBrowserRouter } from "react-router-dom";
+import Error from "../Error/Error";
 import Main from "../layouts/Main";
 import Blog from "../Pages/Blog";
 import Courses from "../Pages/Courses";
@@ -39,5 +40,9 @@ export const routes = createBrowserRouter([
        element: <Courses/>
     }
 ]
+},
+{
+    path: '*',
+    element: <Error/>
 }
 ])

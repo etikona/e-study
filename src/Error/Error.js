@@ -1,9 +1,9 @@
 import React from 'react';
-import error from '../Error/Error'
+import error from '../Assets/error.jpg'
 const Error = () => {
     return (
         <div>
-            <img src={error} alt="" />
+            <img style={{width: '100%'  }} src={error} alt="" />
         </div>
     );
 };
