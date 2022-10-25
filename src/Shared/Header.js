@@ -4,7 +4,7 @@ import './Header.css';
 const Header = () => {
     return (
         <div>
-       <div className="navbar bg-base-100"><font></font>
+       <div className="navbar bg-base-400"><font></font>
   <div className="navbar-start"><font></font>
     <div className="dropdown"><font></font>
       <label tabIndex={0} className="btn btn-ghost lg:hidden"><font></font>

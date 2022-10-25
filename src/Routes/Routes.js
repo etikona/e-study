@@ -4,6 +4,7 @@ import Main from "../layouts/Main";
 import Blog from "../Pages/Blog";
 import Courses from "../Pages/Courses";
 import FAQ from "../Pages/FAQ";
+import Home from "../Pages/Home";
 import Login from "../Pages/Login";
 import Signin from "../Pages/Signin";
 import Header from "../Shared/Header";
@@ -13,6 +14,10 @@ export const routes = createBrowserRouter([
     path: '/',
     element: <Main/>,
     children: [
+        {
+       path: '/',
+       element: <Home/>
+    },
         {
        path: '/login',
        element: <Login/>
