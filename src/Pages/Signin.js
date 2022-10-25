@@ -39,6 +39,14 @@ const Signin = () => {
         <h3 className='form-title'>Sign In</h3>
         <form onSubmit={handleSubmit}>
         <div className="form-control">
+                <label htmlFor="email">Name</label>
+                <input type="text" name="name" required id="" />
+            </div>
+        <div className="form-control">
+                <label htmlFor="email">Photo Url</label>
+                <input type="text" name="photoURL" required id="" />
+            </div>
+        <div className="form-control">
                 <label htmlFor="email">Email</label>
                 <input type="email" name="email" required id="" />
             </div>

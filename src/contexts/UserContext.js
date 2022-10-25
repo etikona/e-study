@@ -25,7 +25,11 @@ const UserContext = ({children}) => {
             return signInWithPopup(auth, provider);
         }
 
-    
+    // Log in with Github
+    const GithubLogin = (provider) => {
+        setLoading(true);
+        return signInWithPopup(auth, provider);
+    }
 
         //  User LogOut Implement
         const logout = () => {
@@ -40,7 +44,7 @@ const UserContext = ({children}) => {
             return () => unsubscribe();
         },[])
 
-    const authInfo = {user, createUser, userLogIn, logout, GoogleLogin, loading};
+    const authInfo = {user, createUser, userLogIn, logout, GoogleLogin, GithubLogin, loading};
 
     return (
         <AuthContext.Provider value={authInfo}>

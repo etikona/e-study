@@ -1,12 +1,12 @@
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../contexts/UserContext';
 
 import './Login.css'
 const Login = () => {
-    const [error, setError] = useState(null);
-    const{userLogIn, GoogleLogin} = useContext(AuthContext);
+    const [error, setError] = useState('');
+    const{userLogIn, GoogleLogin, GithubLogin} = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
@@ -31,6 +31,7 @@ const Login = () => {
         })
         .catch(err =>{
             const msg = err.message;
+            setError(msg);
         } )
     }
 
@@ -42,7 +43,22 @@ const Login = () => {
         .then(() => {
 
         })
-        .catch(error => console.error(error))
+        .catch(error => 
+            console.error(error),
+            setError(error.message)
+            )
+    }
+
+    //  Log in with Github
+    const Github = () => {
+        const provider = new GithubAuthProvider();
+        GithubLogin(provider)
+        .then(() => {
+
+        })
+        .catch(error => console.error(error),
+        setError(error.message)
+        )
     }
 
     return (
@@ -60,8 +76,9 @@ const Login = () => {
                 <input className='btn-submit' type="submit" value="Login" />
             </form>
             <button onClick={Google} className='outline outline-offset-2 outline-2 my-3'>continue with Google</button>
+            <button onClick={Github} className='outline outline-offset-2 outline-2 my-3'>continue with Github</button>
             <p className='err-text'>{error}</p>
-            <p><Link to='/register'>create a new account</Link></p>
+            <p><Link to='/register' className='blue-300'>create a new account</Link></p>
         </div>
     );
 };
