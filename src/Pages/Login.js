@@ -2,6 +2,7 @@ import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../contexts/UserContext';
+import { ArrowDownTrayIcon } from '@heroicons/react/24/solid';
 
 import './Login.css'
 const Login = () => {
@@ -76,8 +77,8 @@ const Login = () => {
                 </div>
                 <input className='btn-submit' type="submit" value="Login" />
             </form>
-            <button onClick={Google} className='outline outline-offset-2 outline-2 my-3'>continue with Google</button>
-            <button onClick={Github} className='outline outline-offset-2 outline-2 my-3'>continue with Github</button>
+            <button   onClick={Google} className='outline px-2  outline-offset-2 outline-2 my-3'>continue with Google</button>
+            <button  onClick={Github} className='outline  px-2 outline-offset-2 outline-2 my-3'>continue with Github</button>
             <p className='err-text'>{error}</p>
             <p><Link to='/register' className='blue-300'>create a new account</Link></p>
         </div>
