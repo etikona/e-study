@@ -24,12 +24,12 @@ const Courses = () => {
                 )
         }
        </div>
-       <div className=' p-5 lg:w-48 ml-24 col-span-1'>
+       <div className=' p-5  ml-24 '>
    {
     courses.map(course => 
  <table className='mb-5 ml-3'>
        <tr>
-<th> {course.id}{')'} </th>
+<th> {course.id} </th>
 <Link to={`/courses/${course.id}`}>
             
 <td>{course.name}</td>
