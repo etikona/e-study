@@ -11,6 +11,7 @@ import Home from "../Pages/Home";
 import Login from "../Pages/Login";
 import Signin from "../Pages/Signin";
 import Header from "../Shared/Header";
+import PrivateRoute from "./PrivateRoute";
 
 export const routes = createBrowserRouter([
     {
@@ -49,7 +50,7 @@ export const routes = createBrowserRouter([
     },
         {
        path: '/checkout',
-       element: <Checkout/>,
+       element: <PrivateRoute><Checkout/></PrivateRoute>
     //    loader: ({params}) => fetch(`https://e-study-server.vercel.app/courses/${params.id}`)
     },
 ]

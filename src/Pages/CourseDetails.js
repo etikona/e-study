@@ -6,8 +6,8 @@ const CourseDetails = () => {
     console.log(course);
     const {name, price, about} = course;
     return (
-        <div className='bg-slate-50'>
-           <div className="card w-96 bg-base-100 shadow-xl m-auto my-5"><font></font>
+        <div className='bg-slate-200 p-5'>
+           <div className="card w-96 bg-slate-100 shadow-xl m-auto my-5"><font></font>
   <div className="card-body"><font></font>
     <h2 className="card-title">Course: {name}</h2><font></font>
     <p className='font-medium text-purple-600'>Price: {price}</p><font></font>
