@@ -1,5 +1,5 @@
 ## E-Study Project create with react.js
-[Live Site:]('https://e-study-72407.web.app/')
+[Live Site:] (https://e-study-72407.web.app/)
 
 ### Technologies used to make this site:
  - Firebase Authentication : 
