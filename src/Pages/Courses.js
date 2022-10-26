@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, NavLink, useLoaderData } from 'react-router-dom';
 import './Courses.css';
 const Courses = () => {
     const courses = useLoaderData();
@@ -16,7 +16,7 @@ const Courses = () => {
     <h2 className="card-title">{course.name}</h2><font></font>
     <p> {course.price}</p><font></font>
     <div className="card-actions justify-end"><font></font>
-      <button className="btn btn-primary">Continue</button><font></font>
+      <Link to={`/courses/${course.id}`}><button className="btn btn-slate-600 w-full">Continue</button><font></font></Link>
     </div><font></font>
   </div><font></font>
 </div>
@@ -29,9 +29,11 @@ const Courses = () => {
     courses.map(course => 
  <table className='mb-5 ml-3'>
        <tr>
-<th>{course.id}</th>
-
+<th> {course.id}{')'} </th>
+<Link to={`/courses/${course.id}`}>
+            
 <td>{course.name}</td>
+            </Link>
     </tr>
  </table> )
    }

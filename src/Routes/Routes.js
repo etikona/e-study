@@ -3,6 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Error from "../Error/Error";
 import Main from "../layouts/Main";
 import Blog from "../Pages/Blog";
+import CourseDetails from "../Pages/CourseDetails";
 import Courses from "../Pages/Courses";
 import FAQ from "../Pages/FAQ";
 import Home from "../Pages/Home";
@@ -39,7 +40,12 @@ export const routes = createBrowserRouter([
        path: '/courses',
        element: <Courses/>,
        loader: () => fetch('https://e-study-server.vercel.app/courses')
-    }
+    },
+        {
+       path: '/courses/:id',
+       element: <CourseDetails/>,
+       loader: ({params}) => fetch(`https://e-study-server.vercel.app/courses/${params.id}`)
+    },
 ]
 },
 {
