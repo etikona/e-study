@@ -22,6 +22,7 @@ const Header = () => {
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg><font></font>
       </label><font></font>
       <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"><font></font>
+        <li> <Link to='/'>Home</Link> </li><font></font>
         <li> <Link to='/courses'> Courses</Link> </li><font></font>
         <li> <Link to='/faq'>FAQ</Link> </li><font></font>
         <li> <Link to='/blog'>Blog</Link> </li><font></font>
@@ -39,6 +40,7 @@ const Header = () => {
   </div><font></font>
   <div className="navbar-center hidden lg:flex"><font></font>
     <ul className="menu menu-horizontal p-0"><font></font>
+    <li> <Link to='/'>Home</Link> </li><font></font>
     <li> <Link to='/courses'> Courses</Link> </li><font></font>
         <li> <Link to='/faq'>FAQ</Link> </li><font></font>
         <li> <Link to='/blog'>Blog</Link> </li><font></font>
