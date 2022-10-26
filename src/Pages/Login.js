@@ -62,7 +62,8 @@ const Login = () => {
     }
 
     return (
-        <div className='form-container'>
+       <div className='bg-slate-200 p-5'>
+         <div className='form-container bg-slate-200'>
             <h3 className='form-title'>Login</h3>
             <form onSubmit={handleSubmit}>
                 <div className="form-control">
@@ -80,6 +81,7 @@ const Login = () => {
             <p className='err-text'>{error}</p>
             <p><Link to='/register' className='blue-300'>create a new account</Link></p>
         </div>
+       </div>
     );
 };
 

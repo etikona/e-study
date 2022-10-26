@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, NavLink, useLoaderData } from 'react-router-dom';
+import { Link,  useLoaderData } from 'react-router-dom';
 import './Courses.css';
 const Courses = () => {
     const courses = useLoaderData();

@@ -51,7 +51,8 @@ const Signin = () => {
         .catch(err => console.error(err))
     }
     return (
-        <div className='form-container'>
+    <div className='bg-slate-200 p-5'>
+            <div className='form-container bg-slate-200'>
         <h3 className='form-title'>Sign In</h3>
         <form onSubmit={handleSubmit}>
         <div className="form-control">
@@ -78,6 +79,7 @@ const Signin = () => {
         </form>
         <p className='err-text'>{error}</p>
         <p>All ready have an account?<Link to='/login'>Login</Link></p>
+    </div>
     </div>
     );
 };
