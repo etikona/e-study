@@ -1,8 +1,19 @@
 import React from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../contexts/UserContext';
 import './Header.css';
 const Header = () => {
-    return (
+  const {user, logout} = useContext(AuthContext);
+
+  // User Log out
+  const handleLogout = () => {
+    logout()
+        .then(() => { })
+        .catch(error => console.error(error))
+}
+  // console.log(user, 'I get the user');
+    return ( 
         <div>
        <div className="navbar bg-base-400"><font></font>
   <div className="navbar-start"><font></font>
@@ -14,8 +25,14 @@ const Header = () => {
         <li> <Link to='/courses'> Courses</Link> </li><font></font>
         <li> <Link to='/faq'>FAQ</Link> </li><font></font>
         <li> <Link to='/blog'>Blog</Link> </li><font></font>
-        <li> <Link to='/register'>Register</Link> </li><font></font>
-        <li> <Link to='/login'>Log in</Link> </li><font></font>
+        {
+          user?.uid?   <>
+          <span>{user?.displayName}</span>
+          <li variant="light" onClick={handleLogout}>Log out</li><font></font>
+      </>:
+        <div><li> <Link to='/register'>Register</Link> </li><font></font>
+        <li> <Link to='/login'>Log in</Link> </li><font></font></div>
+        }
       </ul><font></font>
     </div><font></font>
     <a className="btn btn-ghost normal-case text-xl">E-study</a><font></font>
@@ -25,8 +42,14 @@ const Header = () => {
     <li> <Link to='/courses'> Courses</Link> </li><font></font>
         <li> <Link to='/faq'>FAQ</Link> </li><font></font>
         <li> <Link to='/blog'>Blog</Link> </li><font></font>
-        <li> <Link to='/register'>Register</Link> </li><font></font>
-        <li> <Link to='/login'>Log in</Link> </li><font></font>
+        {
+          user?.uid?   <>
+          <span>{user?.displayName}</span>
+          <li variant="light" onClick={handleLogout}>Log out</li><font></font>
+      </>:
+        <><li> <Link to='/register'>Register</Link> </li><font></font>
+        <li> <Link to='/login'>Log in</Link> </li><font></font></>
+        }
     </ul><font></font>
   </div><font></font>
   
