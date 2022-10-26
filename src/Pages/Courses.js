@@ -14,9 +14,9 @@ const Courses = () => {
   <figure><img src={course.img} alt="Shoes" /></figure><font></font>
   <div className="card-body"><font></font>
     <h2 className="card-title">{course.name}</h2><font></font>
-    <p> {course.price}</p><font></font>
+    <p className='text-purple-600'> {course.price}</p><font></font>
     <div className="card-actions justify-end"><font></font>
-      <Link to={`/courses/${course.id}`}><button className="btn btn-slate-600 w-full">Continue</button><font></font></Link>
+      <Link to={`/courses/${course.id}`} className="btn btn-slate-600 w-full">Continue</Link>
     </div><font></font>
   </div><font></font>
 </div>
