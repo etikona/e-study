@@ -1,10 +1,22 @@
+import { MoonIcon, SunIcon, UserCircleIcon } from '@heroicons/react/24/solid';
 import React from 'react';
+import { useState } from 'react';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { DarkModeSwitch } from 'react-toggle-dark-mode';
 import { AuthContext } from '../contexts/UserContext';
 import './Header.css';
 const Header = () => {
   const {user, logout} = useContext(AuthContext);
+  const [isDarkMode, setDarkMode] = React.useState(false);
+
+  const toggleDarkMode = (checked) => {
+    if(checked){
+
+      setDarkMode(true);
+    }
+    
+  };
 
   // User Log out
   const handleLogout = () => {
@@ -12,6 +24,9 @@ const Header = () => {
         .then(() => { })
         .catch(error => console.error(error))
 }
+
+
+
   // console.log(user, 'I get the user');
     return ( 
         <div>
@@ -28,12 +43,15 @@ const Header = () => {
         <li> <Link to='/blog'>Blog</Link> </li><font></font>
         {
           user?.uid?   <>
-          <span>{user?.displayName}</span>
+          <span>{user?.email}
+          <UserCircleIcon style={{width:25}}></UserCircleIcon>
+          </span>
           <li variant="light" onClick={handleLogout}>Log out</li><font></font>
       </>:
         <div><li> <Link to='/register'>Register</Link> </li><font></font>
         <li> <Link to='/login'>Log in</Link> </li><font></font></div>
         }
+       
       </ul><font></font>
     </div><font></font>
     <a className="btn btn-ghost normal-case text-xl">E-study</a><font></font>
@@ -46,12 +64,20 @@ const Header = () => {
         <li> <Link to='/blog'>Blog</Link> </li><font></font>
         {
           user?.uid?   <>
-          <span>{user?.displayName}</span>
+          <span >{user?.email}</span>
+          <UserCircleIcon style={{width:25}}></UserCircleIcon>
+         
           <li variant="light" onClick={handleLogout}>Log out</li><font></font>
       </>:
         <><li> <Link to='/register'>Register</Link> </li><font></font>
         <li> <Link to='/login'>Log in</Link> </li><font></font></>
         }
+          <DarkModeSwitch
+      style={{ width: '2rem' }}
+      checked={isDarkMode}
+      onChange={toggleDarkMode}
+      size={20}
+    />
     </ul><font></font>
   </div><font></font>
   
