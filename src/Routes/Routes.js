@@ -51,7 +51,7 @@ export const routes = createBrowserRouter([
         {
        path: '/checkout/:id',
        element: <PrivateRoute><Checkout/></PrivateRoute>,
-       loader: ({params}) => (`https://e-study-server.vercel.app/checkout/${params.id}`)
+    //    loader: ({params}) => (`https://e-study-server.vercel.app/checkout/${params.id}`)
     },
 ]
 },

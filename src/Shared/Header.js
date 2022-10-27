@@ -8,14 +8,18 @@ import { AuthContext } from '../contexts/UserContext';
 import './Header.css';
 const Header = () => {
   const {user, logout} = useContext(AuthContext);
-  const [isDarkMode, setDarkMode] = React.useState(false);
+  const [isDarkMode, setDarkMode] =useState(false);
 
+
+  //  Theme Implement
   const toggleDarkMode = (checked) => {
     if(checked){
 
       setDarkMode(true);
     }
-    
+    if(!checked){
+      setDarkMode(false)
+    }
   };
 
   // User Log out

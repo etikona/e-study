@@ -13,7 +13,9 @@ const CourseDetails = () => {
    const exampleRef = useRef();
   const navigate = useNavigate();
 
-
+const handleCheckout = () => {
+  navigate(`/checkout/${id}`)
+}
 
 
     return (
@@ -39,10 +41,7 @@ const CourseDetails = () => {
     <img className='h-40 w-50' src={img} alt=""  />
     <p ref={exampleRef} >{about}</p><font></font>
     <div className="card-actions justify-end"><font></font>
-    <Link to={`/checkout/:${id}`} className='btn btn-slate-600 w-full'>
-       Get Access
-       
-         </Link>
+    <button onClick={handleCheckout} className="btn btn-primary">Buy Now</button>
 
       
     </div><font></font>
