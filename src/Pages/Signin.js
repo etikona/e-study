@@ -31,9 +31,10 @@ const Signin = () => {
         createUser(email, password)
         .then(res => {
             const user = res.user;
-            form.reset();
             handleProfile(name, photoURL)
-            console.log(user);
+            
+            form.reset();
+           
         })
         .catch(err =>{
             const msg = err.message;

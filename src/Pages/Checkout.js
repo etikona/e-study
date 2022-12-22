@@ -6,16 +6,12 @@ import { useLoaderData } from 'react-router-dom';
 const Checkout = () => {
   const [info, setInfo] = useState([]);
   
-  const currentInfo = async(id) =>{
-    const url = `https://e-study-server.vercel.app/checkout/${id}`
-    const res = await fetch(url);
-    const data = await res.json();
-    console.log(data);
-    setInfo(data);
-}
+ useEffect((params) => {
+  fetch(`https://e-study-server.vercel.app/courses/${params.id}`)
+  .then(res => res.json())
+  .then(data => console.log(data))
+ } ,[])
 
-  // `https://e-study-server.vercel.app/checkout/${id}`
-  // const {name} = checkout;
     return (
       <div className='bg-slate-200 p-5'>
           <div className='m-24 '>
