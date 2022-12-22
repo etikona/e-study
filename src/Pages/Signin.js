@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import { toast } from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../contexts/UserContext';
 
@@ -32,7 +33,7 @@ const Signin = () => {
         .then(res => {
             const user = res.user;
             handleProfile(name, photoURL)
-            
+            toast.success("Create new user successfully")
             form.reset();
            
         })
